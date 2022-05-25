@@ -1,3 +1,3 @@
-FROM gitpod/workspace-mysql:branch-mysql
+FROM gitpod/workspace-full
 
-ENV x=2
+RUN sudo apt install mysql-client-core-8.0
