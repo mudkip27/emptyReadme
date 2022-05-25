@@ -1,3 +1,3 @@
-FROM gitpod/workspace-mysql:branch-mysql
+FROM ubuntu/mysql
 
 ENV x=2
