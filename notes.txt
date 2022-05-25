@@ -1,0 +1,25 @@
+docker run --name test-mysql -p 3306 -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql:latest
+
+container id:
+    14b1a7ae15b5a2834fa136784a624b2cf53f17fd8853728674ea7a8e9c13df47
+
+CREATE TABLE geonames (FEATURE_ID INT(10), \
+                        FEATURE_NAME VARCHAR(120), \
+                        FEATURE_CLASS VARCHAR(50), \
+                        STATE_ALPHA VARCHAR(2), \
+                        STATE_NUMERIC VARCHAR(2), \
+                        COUNTY_NAME VARCHAR(100), \
+                        COUNTY_NUMERIC VARCHAR(3), \
+                        PRIMARY_LAT_DMS VARCHAR(7), \
+                        PRIM_LONG_DMS VARCHAR(8), \
+                        PRIM_LAT_DEC DECIMAL(10,7), \
+                        PRIM_LONG_DEC DECIMAL(11,7), \
+                        SOURCE_LAT_DMS VARCHAR(7), \
+                        SOURCE_LONG_DMS VARCHAR(8), \
+                        SOURCE_LAT_DEC DECIMAL(10,7), \
+                        SOURCE_LONG_DEC DECIMAL(11,7), \
+                        ELEV_IN_M INT(5), \
+                        ELEV_IN_FT INT(6), \
+                        MAP_NAME VARCHAR(100), \
+                        DATE_CREATED DATE, \
+                        DATE_EDITED DATE);
