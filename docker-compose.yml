@@ -1,8 +1,8 @@
 version: '3'
 services:
   mysql:
-    build:
-      dockerfile: dockerfile.sqlSetup
+    #build:
+    #  dockerfile: dockerfile.sqlSetup
     image: mysql:latest
     container_name: myAppDBcont
     ports:
