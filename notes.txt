@@ -1,3 +1,16 @@
-docker run --name test-mysql -p 3306 -e MYSQL_ROOT_PASSWORD=LoonyToonies -d mysql:latest
+docker run --name myAppDBcont -p 3306 -e MYSQL_ROOT_PASSWORD=LoonyToonies -d mysql:latest
 
-mysql -P 49153 --protocol=tcp -u rooty -p
+mysql -P 49153 --protocol=tcp -u root -p
+
+docker run -it --link test-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" \
+-uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+
+services:
+  service1:
+    build:
+        context: .
+        args:
+            - NODE_ENV=local
+        dockerfile: Dockerfile_X //<-- of importance
+    ports:
+        - "8765:8765"

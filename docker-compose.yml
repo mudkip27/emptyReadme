@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql:
+    build:
+      dockerfile: dockerfile.sqlSetup
+    image: mysql:latest
+    container_name: myAppDBcont
+    ports:
+      - 8083:3306
+    volumes:
+      - ./sqlDBvolume:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: LoonyToonies
+      MYSQL_DATABASE: myAppDB
+  backEndJS:
+    image: node:latest
+    container_name: nodeDBcont
+    environment:
+      MYSQL_ROOT_PASSWORD: LoonyToonies
+      MYSQL_DATABASE: myAppDB
+  
