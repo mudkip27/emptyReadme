@@ -1,7 +1,12 @@
-docker run --name test-mysql -p 3306 -e MYSQL_ROOT_PASSWORD=<my-secret-pw> -d mysql:latest
+docker run --name test-mysql -p 3306 -e MYSQL_ROOT_PASSWORD=LoonyToonies -d mysql:latest
 
 container id:
     14b1a7ae15b5a2834fa136784a624b2cf53f17fd8853728674ea7a8e9c13df47
+    ba8f6445d4374e566e5f3c435f909b7a3bac23a461c91e5336dd561049a39326
+
+mysql -P 49153 --protocol=tcp -u rooty -p
+CREATE DATABASE myAppDB
+CREATE TABLE logins (EMAIL VARCHAR(255) PRIMARY KEY AUTO_INCREMENT, PASSWORD VARCHAR(255), DATE_CREATED DATE, DATE_EDITED DATE)
 
 CREATE TABLE geonames (FEATURE_ID INT(10), \
                         FEATURE_NAME VARCHAR(120), \
