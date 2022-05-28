@@ -1,0 +1,3 @@
+need to automate
+    npm init --yes
+    npm i express
